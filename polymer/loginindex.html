@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>login</title>
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<script>
+
+
+function getInfo(){
+	var usename = document.getElementById("username").value
+	var psword = document.getElementById("password").value
+
+	var corrct_way = /^[A-Za-z]+$/;
+    
+    if ( usename  == "") {
+       
+        document.getElementById("uname").innerHTML="Please fill Username";
+        
+        return false;
+     }
+        if(usename.length<8) {
+      document.getElementById("uname").innerHTML="Username must be 8 characters";
+      return false;
+    }
+    if(usename.length>20) {
+      document.getElementById("uname").innerHTML="Username must be less than 20 characters";
+      return false;
+}
+
+if(usename.match(corrct_way))
+   true;
+   else{
+      document.getElementById("uname").innerHTML="only alphabets are not allowed";
+      return false;
+
+   }
+   var regx = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+    if (psword == "") {
+       
+        document.getElementById("pass").innerHTML="Please enter password";
+        
+        return false;
+     }
+     if(regx.test(psword)){
+        document.getElementById("pass").innerHTML="";
+      
+      }  
+      else{
+         document.getElementById("pass").innerHTML="**Must contain at least one number and one uppercase  <br> and lowercase letter, and at least 8 or more characters ";
+         return false;
+      }
+if (usename == "manishankar" && psword == "Mani@123")
+	  
+	  {
+	  	
+		window.location.href="loginsuccess2.html";
+	  
+	  
+	}
+	else{
+		alert("please enter correct username and password");
+		return false;
+	}
+}
+
+</script>
+<style>
+
+	body{
+		background-image: url("4.png");  
+	background-position: center;
+		background-repeat: no-repeat;
+			background-size: cover;
+
+	}
+
+
+
+input[type =text]{
+   width:200px;
+   padding:5px;
+font-size:18px;
+border-radius:0 10px 0 0;
+text-align:center;
+
+}
+
+input[type =text]:hover {background-color: #e7e7e7;}
+
+input[type =password]{
+   width:200px;
+   padding:5px;
+font-size:18px;
+border-radius:0 10px 0 0;
+text-align:center;
+}
+
+input[type =password]:hover {background-color: #e7e7e7;}
+
+
+input[type = submit]{
+font-size:18px;border-radius:0 10px 0 0;
+padding:5px;
+width:100px;
+border-radius:120px;
+border:none;
+}
+
+input[type = submit]:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+
+
+.form {
+  position: relative;
+ margin: auto;
+ margin-top:150px;
+  background: #FFFFFF;
+  width: 250px;
+  
+  padding: 45px;
+  text-align: center;
+   background: rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+  color: red;
+}
+
+
+a:active {
+  color: yellow;
+} 
+
+
+
+</style>
+</head>
+
+<form name="myForm" action="loginsuccess2.html" onsubmit="return getInfo()" method="post">
+
+
+  <div class="form">
+
+
+
+<center>
+
+<h2>
+
+
+<h2 style="color:white;"> <u>LOGIN</u>
+</h2>
+<br>
+
+
+</center>
+
+
+
+<input type="text" placeholder = "UserName"  id="username" value=""  > 
+<h3 style="color:red;" id="uname"></h3>
+
+
+
+
+<input type="password"  placeholder = "password"   id="password" value="" > 
+
+<h3 style="color:red;" id="pass"></h3>
+
+
+
+
+
+
+
+<a href="C:\Users\MANI SHANKAR\Desktop\assin2-login\loginsuccess.html">
+<p><input type="submit"   value="LOGIN"  > </p> 
+</a><br>
+
+<class= "psw">Forgot <a href="#">password?</a><br>
+<br>
+
+
+
+<class= "signup">Didn't have an account? <a href="#">SignUp</a><br>
+
+
+</div>
+
+
+</form>
+</body>
+</html> 
